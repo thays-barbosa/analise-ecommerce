@@ -1,0 +1,13 @@
+# Arquivos e Pastas de Dados
+data/raw/
+data/processed/
+
+# Pastas de Ambientes Virtuais (Venv)
+venv/
+.venv/
+
+# Arquivos de Cache e Temporários (Python/Jupyter)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
