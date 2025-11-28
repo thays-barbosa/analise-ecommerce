@@ -1,50 +1,60 @@
-# 📊 Projeto de Análise de Dados de E-commerce Brasileiro
+# Análise Exploratória e Inferencial de Dados de E-commerce
 
-Este repositório contém o relatório analítico e o código (Python/SQL) para um projeto de análise de dados aprofundada, focado em um negócio de e-commerce brasileiro.
+**Equipe:** Levi Moraes e Thays Barbosa
 
-## 📝 Contexto do Projeto e Objetivos
+**Contexto:** Análise de dados de um e-commerce brasileiro com o objetivo de fornecer respostas confiáveis (com tratamento estatístico) sobre receita, margens, frete, prazos de entrega e comportamento do cliente.
 
-O objetivo principal é fornecer à diretoria da empresa respostas confiáveis e estatisticamente válidas sobre métricas críticas de performance. Isso inclui a análise de receita, margens, frete, prazos de entrega e o comportamento geral do cliente.
+---
 
-A entrega final será um relatório analítico completo (PDF) acompanhado por um código Python/SQL totalmente reprodutível (Notebook).
+## 1. Metodologia e Entregáveis
 
-## 🎯 Indicadores Chave de Performance (KPIs)
+O projeto seguiu um pipeline de análise de dados robusto, culminando em um relatório analítico e artefatos de código para garantir a reprodutibilidade.
 
-A análise está centrada nas seguintes métricas cruciais, que guiarão os insights acionáveis:
+### 1.1. Entregáveis Principais
 
-* **Ticket Médio**: Valor total por pedido.
+| Entregável | Descrição | Localização |
+| :--- | :--- | :--- |
+| **Relatório Analítico** | Documento principal com Sumário Executivo, Análise de Dados & Método, EDA, Inferência Estatística e Insights Acionáveis. | Diretório raiz (`.pdf` e `.md`) |
+| **Notebook Python** | Código completo para reprodutibilidade da limpeza, Feature Engineering, EDA e Inferência. | `notebooks/notebook_analise_ecommerce.ipynb` |
+| **Script SQL** | Consulta SQL para reprodutibilidade da etapa de Feature Engineering em ambiente de banco de dados. | `code/sql/main_query.sql` |
+| **Dados Brutos** | Arquivos CSV originais para garantir a reprodutibilidade total da análise. | `data/raw/` |
 
-* **Take-Rate de Frete (P_Service / Total)**: Contribuição percentual do frete na receita total do pedido.
+### 1.2. Abordagem Estatística
 
-* **Prazo de Entrega (Lead Time)**: Dias entre a data do pedido e a data de entrega.
+A análise focou em três pilares estatísticos:
 
-* **Atraso na Entrega (Atraso)**: Indicador binário para entregas fora do prazo (D_Date > D_Forecast).
+1.  **Qualidade e Preparação:** Tratamento de NAs, tipagem correta e documentação de outliers (regra IQR).
+2.  **Análise Descritiva (EDA):** Uso de medidas de tendência central/dispersão, histogramas, boxplots e heatmaps de correlação.
+3.  **Inferência Estatística:** Cálculo de **Intervalos de Confiança de 95%** para o Ticket Médio, Atraso Médio e Proporções (Atraso e Cancelamento), fornecendo margens de erro confiáveis para a tomada de decisão.
 
-* **Taxa de Conversão de Pagamento**: Taxa de pedidos Confirmados vs. Cancelados (analisada por tipo de pagamento).
+---
 
-* **Performance Logística**: Lead Time e Atraso analisados por tipo de serviço (Standard, Same-Day, Scheduled).
+## 2. KPIs e Insights Chave
 
-* **Sazonalidade**: Análise de receita e métricas por mês, Estado (UF) e Região.
+O Sumário Executivo do relatório detalha os achados mais acionáveis, destacando:
 
-* **Elasticidade de Desconto**: Relação entre o mix de produtos (Categoria/Subcategoria) e o percentual de desconto aplicado.
+*   **Risco Logístico Crítico:** Taxa de Atraso de **83.25%** (IC 95% [81.61%, 84.89%]), com o serviço *Same-Day* apresentando o pior desempenho.
+*   **Perda de Conversão:** O método **Boleto** apresenta a menor taxa de confirmação (23.14%), indicando alto abandono no funil de pagamento.
+*   **Elasticidade do Desconto:** Correlação positiva entre Desconto e Volume de Vendas apenas para a subcategoria **Celulares, Tablets e Acessórios**.
 
-## 🛠️ Estrutura do Repositório
+---
 
-| Arquivo/Pasta | Descrição |
- | ----- | ----- |
-| `projeto_ecommerce_analise.md` | Guia abrangente e estrutura detalhada para a elaboração do relatório analítico final. |
-| `notebook_analise_ecommerce.py` | Código Python para Limpeza de Dados, Engenharia de Features, EDA e Inferência Estatística. |
-| `data/` | Diretório recomendado para armazenar arquivos de dados brutos (e.g., CSVs ou extrações de banco de dados). |
-| `report_pdf/` | Onde a versão final do relatório em PDF será armazenada (Entregável). |
+## 3. Estrutura do Repositório
 
-## 👥 Equipe do Projeto
+Para facilitar a navegação e a reprodutibilidade, o projeto segue a seguinte estrutura:
 
-Este projeto foi desenvolvido em equipe com um máximo de 3 pessoas, conforme as diretrizes do projeto.
-
-**Membros da Equipe:**
-
-1. Levi Moraes
-
-2. Thays Barbosa
-
-
+*   **analise-ecommerce/** (Diretório Raiz)
+    *   `relatorio_analitico.pdf` (Relatório final em PDF - Entregável principal)
+    *   `relatorio_analitico.md` (Relatório final em Markdown)
+    *   `README.md` (Este arquivo)
+    *   `.gitignore` (Arquivos ignorados)
+    *   **code/**
+        *   **sql/**
+            *   `main_query.sql` (Script SQL para Feature Engineering)
+    *   **data/**
+        *   **raw/**
+            *   `*.csv` (Arquivos de dados brutos para reprodutibilidade)
+    *   **docs/**
+        *   `*.png` (Gráficos gerados na EDA)
+    *   **notebooks/**
+        *   `notebook_analise_ecommerce.ipynb` (Notebook Python com a análise completa)
