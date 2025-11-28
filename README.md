@@ -43,18 +43,18 @@ O Sumário Executivo do relatório detalha os achados mais acionáveis, destacan
 
 Para facilitar a navegação e a reprodutibilidade, o projeto segue a seguinte estrutura:
 
-analise-ecommerce/
-├── code/
-│   └── sql/
-│       └── main_query.sql          # Script SQL para Feature Engineering
-├── data/
-│   └── raw/
-│       └── *.csv                   # Arquivos de dados brutos (FACT_Orders, DIM_Delivery, etc.)
-├── docs/
-│   └── *.png                       # Gráficos gerados na EDA
-├── notebooks/
-│   └── notebook_analise_ecommerce.ipynb # Notebook Python com a análise completa
-├── relatorio_analitico.pdf         # Relatório final em PDF (Entregável principal)
-├── relatorio_analitico.md          # Relatório final em Markdown
-├── README.md                       # Este arquivo
-└── .gitignore                      # Arquivos ignorados (temporários, processados)
+*   **analise-ecommerce/** (Diretório Raiz)
+    *   `relatorio_analitico.pdf` (Relatório final em PDF - Entregável principal)
+    *   `relatorio_analitico.md` (Relatório final em Markdown)
+    *   `README.md` (Este arquivo)
+    *   `.gitignore` (Arquivos ignorados)
+    *   **code/**
+        *   **sql/**
+            *   `main_query.sql` (Script SQL para Feature Engineering)
+    *   **data/**
+        *   **raw/**
+            *   `*.csv` (Arquivos de dados brutos para reprodutibilidade)
+    *   **docs/**
+        *   `*.png` (Gráficos gerados na EDA)
+    *   **notebooks/**
+        *   `notebook_analise_ecommerce.ipynb` (Notebook Python com a análise completa)
