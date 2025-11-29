@@ -66,8 +66,6 @@ As seguintes *features* foram criadas para a análise:
 
 A distribuição do Ticket Médio é **altamente assimétrica à direita** (positiva), o que foi confirmado pelo Teste de Shapiro-Wilk (p-valor < 0.0000), rejeitando a hipótese de normalidade. Isso justifica o uso de estatísticas não-paramétricas ou a transformação logarítmica para testes inferenciais mais robustos.
 
-*   **Gráfico:** [ticket_distribution.png]
-
 ### 3.3. Sazonalidade e Distribuição Geográfica
 
 | Mês | Receita Total (R$) |
@@ -148,18 +146,6 @@ O código completo para a limpeza, *feature engineering*, EDA e inferência est�
 
 Os gráficos gerados estão disponíveis no diretório `charts/` (ticket_distribution.png, correlation_heatmap.png, monthly_revenue.png).
 
----
 
-## 7. Sugestão de Commit
 
-**Sugestão de Commit:**
 
-```
-feat: Implementa análise exploratória e inferencial de dados de e-commerce
-
-Adiciona o notebook Python com o pipeline completo de ETL, EDA e Inferência Estatística, conforme solicitado no projeto. Inclui também o script SQL para reprodutibilidade da etapa de feature engineering.
-
-- Cria `notebooks/notebook_analise_ecommerce.ipynb` com análise completa.
-- Atualiza `code/sql/main_query.sql` com a lógica de feature engineering.
-- Gera gráficos de EDA (distribuição, correlação, sazonalidade).
-```
